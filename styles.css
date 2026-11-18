@@ -1,0 +1,89 @@
+    /* Makes element widths easier to manage */
+    * { box-sizing: border-box; }
+
+    /* Page colors and font */
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f7f5ef;
+      color: #51483e;
+    }
+
+    /* Adds space around the About Me card */
+    .about-me { padding: 70px 20px; }
+
+    /* Holds the picture and text side by side on larger screens */
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 42px;
+      background-color: #e5e9df;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(81, 72, 62, 0.10);
+    }
+
+    /* Keeps the profile picture neatly sized */
+    .profile { flex: 0 0 280px; }
+    .profile img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+    }
+
+    /* Allows the text area to fill the remaining space */
+    .about-content { flex: 1; min-width: 0; }
+
+    /* Small section heading */
+    .about-content h2 {
+      margin: 0 0 10px;
+      color: #788b70;
+      font-size: 19px;
+      letter-spacing: 1px;
+    }
+
+    /* Main name heading */
+    .about-content h1 {
+      margin: 0 0 18px;
+      color: #655447;
+      font-size: 38px;
+    }
+
+    /* Biography text */
+    .about-content p {
+      margin: 0 0 25px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* Skills heading */
+    .about-content h3 { margin: 0 0 14px; color: #655447; }
+
+    /* Arranges badges in rows and allows wrapping */
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    /* Rounded sage green skill badges */
+    .skills span {
+      background-color: #a7b59e;
+      color: #263324;
+      padding: 10px 15px;
+      border-radius: 22px;
+      font-size: 14px;
+    }
+
+    /* Stacks the picture and text vertically on mobile */
+    @media (max-width: 768px) {
+      .about-me { padding: 30px 15px; }
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 26px;
+        padding: 25px;
+      }
+      .profile { flex: none; width: min(220px, 100%); }
+      .about-content h1 { font-size: 30px; }
+      .skills { justify-content: center; }
+    }
